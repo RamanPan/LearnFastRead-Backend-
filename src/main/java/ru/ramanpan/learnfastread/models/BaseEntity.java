@@ -5,10 +5,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -17,15 +14,17 @@ import java.util.Objects;
 @Setter
 @ToString
 @RequiredArgsConstructor
-abstract class BaseEntity {
+public abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @CreatedDate
+    @Column(name = "date_init")
     private LocalDate registerDate;
 
     @CreatedDate
+    @Column(name = "date_change")
     private LocalDate changesDate;
 
     @Override
