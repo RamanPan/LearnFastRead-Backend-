@@ -3,6 +3,7 @@ package ru.ramanpan.learnfastread.models;
 import lombok.*;
 import org.hibernate.Hibernate;
 import ru.ramanpan.learnfastread.models.enums.Role;
+import ru.ramanpan.learnfastread.models.enums.Status;
 import ru.ramanpan.learnfastread.models.indicators.*;
 
 import javax.persistence.*;
@@ -34,6 +35,9 @@ public class User extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "is_admin")
     private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @Column(name = "task_in_day")
     private Integer taskInDay;

@@ -20,7 +20,7 @@ public abstract class BaseEntity {
     private Long id;
 
     @CreatedDate
-    @Column(name = "date_init")
+    @Column(name = "date_init",nullable = false)
     private LocalDate registerDate;
 
     @CreatedDate
