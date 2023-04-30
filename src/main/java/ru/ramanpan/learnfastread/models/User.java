@@ -32,6 +32,9 @@ public class User extends BaseEntity {
     @Column(name = "icon", length = 100)
     private String picture;
 
+    @Column(name = "refresh_token", length = 300)
+    private String refreshToken;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "is_admin")
     private Role role;
